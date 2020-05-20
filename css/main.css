@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:200,400,500,700,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,700,800&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:200,400,500,700,800&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,500,700,800&display=swap");
+
 :root {
     --sidenav-header-years-colors: #bd5d38;
     --img-border: rgba(255, 255, 255, .2);
@@ -16,7 +18,6 @@ body {
     height: 100%;
     scroll-behavior: smooth;
 }
-
 
 /* =================================== SideNav ============================================= */
 
@@ -74,6 +75,7 @@ body {
         width: 17rem;
         height: 100vh;
     }
+
     .sidenav::before {
         content: " ";
         position: absolute;
@@ -84,27 +86,28 @@ body {
         background-color: var(--sidenav-header-years-colors);
         z-index: 3;
     }
+
     .sidenav-items {
         justify-content: center;
         align-items: center;
         height: auto;
     }
+
     .sidenav-name {
         display: none;
     }
+
     .sidenav-img img {
         display: block;
         position: relative;
         z-index: 3;
         max-width: 10rem;
         max-height: 10rem;
-        border: 0.7rem solid rgba(255,255,255,.2);
+        border: 0.7rem solid rgba(255, 255, 255, 0.2);
         border-radius: 50%;
         margin-top: 10rem;
-        
     }
 }
-
 
 /* ====== toggle button ===== */
 
@@ -168,11 +171,11 @@ body {
     .sidenav-burger-div {
         display: none;
     }
+
     .sidenav-burger {
         display: none;
     }
 }
-
 
 /* === navbar === */
 
@@ -233,24 +236,25 @@ body {
         height: 100%;
         position: relative;
     }
+
     .navbar-items {
         justify-content: center;
         align-items: center;
         padding: 0;
         margin-top: 5rem;
     }
+
     .navbar-items {
         padding: 3rem 0 0 0;
         margin: 0;
     }
+
     .sidenav-burger {
         display: none;
     }
 }
 
-
 /* ================================= Section 1 - Developer's information ===================== */
-
 
 /* Developer name */
 
@@ -280,7 +284,6 @@ body {
     color: var(--sidenav-header-years-colors);
 }
 
-
 /* Developer address, mail and stuff */
 
 .developer-main-information-subtitle {
@@ -296,6 +299,12 @@ body {
     color: var(--sidenav-header-years-colors);
 }
 
+@media (min-width: 992px) {
+    .developer-main-information {
+        padding: 5rem 1rem;
+        max-width: 74rem;
+    }
+}
 
 /* Short paragraph of Developer's introduction */
 
@@ -308,7 +317,6 @@ body {
     margin: 0;
     margin-bottom: 3rem;
 }
-
 
 /* Social media icons */
 
@@ -343,7 +351,6 @@ body {
 .developer-main-information-social-media-icons a:hover {
     background-color: var(--sidenav-header-years-colors);
 }
-
 
 /* ================================= Section 2 - Experience section ===================== */
 
@@ -406,6 +413,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
     }
+
     .experience__section-titles {
         display: flex;
         flex-direction: column;
@@ -413,12 +421,12 @@ body {
         justify-content: center;
         max-width: 50%;
     }
+
     .experience-section-years {
         width: 18rem;
         text-align: right;
     }
 }
-
 
 /* ================================= Section 3 - Education section ===================== */
 
@@ -482,7 +490,6 @@ body {
     font-weight: 400;
     color: var(--sidenav-header-years-colors);
 }
-
 
 /* ================================= Section 4 - Skills ===================== */
 
@@ -552,7 +559,6 @@ body {
     margin-bottom: 0.2rem;
 }
 
-
 /* ================================= Section 4 - Interests===================== */
 
 .interests {
@@ -579,7 +585,6 @@ body {
 .interests-container p:nth-child(3) {
     margin-bottom: 0;
 }
-
 
 /* ================================= Section 4 - Awards ===================== */
 
@@ -612,16 +617,16 @@ body {
     color: var(--award-trophy-color);
 }
 
-@media (min-width: 768px) {
-    .wrapper {
-        margin-top: 5rem;
-    }
-}
-
 @media (min-width: 992px) {
     .wrapper {
         margin-left: 18rem;
-        width: 100%;
-        height: 100vh;
+        min-width: none;
+        max-height: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        margin-top: 5rem;
     }
 }
