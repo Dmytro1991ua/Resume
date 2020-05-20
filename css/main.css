@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:200,400,500,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,700,800&display=swap');
+:root {
+    --sidenav-header-years-colors: #bd5d38;
+    --img-border: rgba(255, 255, 255, .2);
+    --navbar-text-toggle-button: rgba(255, 255, 255, .5);
+    --headers-sections: #343a40;
+    --subheaders-discriptions-sections: #868e96;
+    --icons-background: #495057;
+    --border-color: rgba(255, 255, 255, .1);
+    --award-trophy-color: #ffc107;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+
+/* =================================== SideNav ============================================= */
+
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+.sidenav::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-color: var(--sidenav-header-years-colors);
+    z-index: 3;
+}
+
+.sidenav-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    position: relative;
+}
+
+.sidenav-img {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: black;
+}
+
+.sidenav-img img {
+    display: none;
+}
+
+.sidenav-img h1 {
+    position: relative;
+    font-size: 1.25rem;
+    font-family: 'Muli', sans-serif;
+    z-index: 3;
+    margin: 0;
+    margin-left: 1rem;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .sidenav {
+        position: fixed;
+        width: 17rem;
+        height: 100vh;
+    }
+    .sidenav::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--sidenav-header-years-colors);
+        z-index: 3;
+    }
+    .sidenav-items {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .sidenav-name {
+        display: none;
+    }
+    .sidenav-img img {
+        display: block;
+        position: relative;
+        z-index: 3;
+        max-width: 10rem;
+        max-height: 10rem;
+        border: 0.7rem solid rgba(255,255,255,.2);
+        border-radius: 50%;
+        margin-top: 10rem;
+        
+    }
+}
+
+
+/* ====== toggle button ===== */
+
+.sidenav-burger-div {
+    width: 3.6rem;
+    height: 2.4rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2rem;
+    margin-right: 2rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+    z-index: 4;
+}
+
+.sidenav-burger {
+    display: block;
+    position: relative;
+    z-index: 4;
+    height: 1.2rem;
+    width: 1.4rem;
+    background-color: transparent;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+}
+
+.sidenav-burger span {
+    content: " ";
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 0.2rem;
+    left: 0;
+    top: 0.5rem;
+    background-color: var(--navbar-text-toggle-button);
+}
+
+.sidenav-burger::before,
+.sidenav-burger::after {
+    content: " ";
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 0.2rem;
+    left: 0;
+    background-color: var(--navbar-text-toggle-button);
+}
+
+.sidenav-burger::before {
+    top: 0;
+}
+
+.sidenav-burger::after {
+    bottom: 0;
+}
+
+@media (min-width: 992px) {
+    .sidenav-burger-div {
+        display: none;
+    }
+    .sidenav-burger {
+        display: none;
+    }
+}
+
+
+/* === navbar === */
+
+.navbar {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--sidenav-header-years-colors);
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar.active {
+    top: 0;
+}
+
+.navbar-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 1rem;
+    margin: 0;
+    z-index: 3;
+    position: relative;
+    font-weight: 900;
+}
+
+.navbar-item {
+    list-style: none;
+    margin-bottom: 1.2rem;
+}
+
+.navbar-item:nth-child(1) {
+    margin-top: 1rem;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Muli', sans-serif;
+    text-transform: uppercase;
+    color: var(--navbar-text-toggle-button);
+}
+
+.navbar-item-white {
+    color: #fff !important;
+}
+
+.navbar-item a:hover,
+.navbar-item a:active {
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .navbar-items {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-top: 5rem;
+    }
+    .navbar-items {
+        padding: 3rem 0 0 0;
+        margin: 0;
+    }
+    .sidenav-burger {
+        display: none;
+    }
+}
+
+
+/* ================================= Section 1 - Developer's information ===================== */
+
+
+/* Developer name */
+
+.developer-main-information {
+    padding: 5rem 1rem;
+    max-width: 74rem;
+}
+
+.developer-main-information-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.developer-main-information-container h1 {
+    font-size: 6rem;
+    color: var(--headers-sections);
+    font-family: 'Saira Extra Condensed', sans-serif;
+    margin: 0;
+    margin-top: 2rem;
+    line-height: 5.5rem;
+}
+
+.developer-main-information-container span {
+    color: var(--sidenav-header-years-colors);
+}
+
+
+/* Developer address, mail and stuff */
+
+.developer-main-information-subtitle {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.developer-main-information-subtitle a {
+    text-decoration: none;
+    color: var(--sidenav-header-years-colors);
+}
+
+
+/* Short paragraph of Developer's introduction */
+
+.developer-main-information-container p {
+    font-size: 1.15rem;
+    font-family: 'Muli', sans-serif;
+    line-height: 2rem;
+    font-weight: 500;
+    color: var(--subheaders-discriptions-sections);
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+
+/* Social media icons */
+
+.developer-main-information-social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.developer-main-information-social-media-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.developer-main-information-social-media-icons a {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--icons-background);
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 1rem;
+    text-align: center;
+    line-height: 3.4rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.developer-main-information-social-media-icons a:hover {
+    background-color: var(--sidenav-header-years-colors);
+}
+
+
+/* ================================= Section 2 - Experience section ===================== */
+
+.experience-sections {
+    padding: 5rem 1rem;
+    max-width: 74rem;
+}
+
+.experience-section-container h3 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--headers-sections);
+}
+
+.experience__section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.experience__section-titles h4 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--headers-sections);
+}
+
+.experience__section-titles h5 {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 500;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.experience__section-titles p {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-family: 'Muli', sans-serif;
+    line-height: 1.5rem;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.experience-section-years h6 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
+    color: var(--sidenav-header-years-colors);
+}
+
+@media (min-width: 768px) {
+    .experience__section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .experience__section-titles {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 50%;
+    }
+    .experience-section-years {
+        width: 18rem;
+        text-align: right;
+    }
+}
+
+
+/* ================================= Section 3 - Education section ===================== */
+
+.education {
+    padding: 5rem 1rem;
+    max-width: 74rem;
+}
+
+.education-section-container h2 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--headers-sections);
+}
+
+.education-sections {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.education-sections h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--headers-sections);
+}
+
+.education-sections h4 {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 500;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.education-sections p {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-family: 'Muli', sans-serif;
+    line-height: 1.5rem;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.education-sections div {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    line-height: 1.5rem;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.education-sections h5 {
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
+    color: var(--sidenav-header-years-colors);
+}
+
+
+/* ================================= Section 4 - Skills ===================== */
+
+.skills {
+    padding: 5rem 1rem;
+    max-width: 74rem;
+}
+
+.skills-container h2 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--headers-sections);
+}
+
+.skills-sections {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.skills-sections h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 500;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.skills_icon {
+    list-style: none;
+    margin-right: 1rem;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands";
+}
+
+.skills_icon i {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.skills-worflows {
+    margin: 0;
+    padding: 0;
+}
+
+.skills-worflows li {
+    list-style: none;
+    color: var(--subheaders-discriptions-sections);
+    margin-bottom: 0.2rem;
+}
+
+
+/* ================================= Section 4 - Interests===================== */
+
+.interests {
+    padding: 5rem 1rem;
+    max-width: 74rem;
+}
+
+.interests-container h2 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--headers-sections);
+}
+
+.interests-container p {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-family: 'Muli', sans-serif;
+    line-height: 1.5rem;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.interests-container p:nth-child(3) {
+    margin-bottom: 0;
+}
+
+
+/* ================================= Section 4 - Awards ===================== */
+
+.awards {
+    padding: 5rem 1rem;
+    max-width: 74rem;
+}
+
+.awards-container h2 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: var(--headers-sections);
+}
+
+.awards-lists {
+    margin: 0;
+    padding: 0;
+}
+
+.awards-lists li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+    font-family: 'Muli', sans-serif;
+    color: var(--subheaders-discriptions-sections);
+}
+
+.fa-trophy {
+    color: var(--award-trophy-color);
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        margin-top: 5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper {
+        margin-left: 18rem;
+        width: 100%;
+        height: 100vh;
+    }
+}
